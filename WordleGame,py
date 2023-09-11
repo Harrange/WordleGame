@@ -1,0 +1,82 @@
+import random
+
+words = ["this", "five", "help", "lake", "pink", "cats"]
+
+hidden_word = random.choice(words)
+
+
+
+def check_word(guess):
+    if hidden_word == guess:
+        print("yep")
+        return True
+    else:
+        result = ""
+        for i, j in zip(guess, hidden_word):
+            if i == j:
+                result += "(C)" # letter in the word and in correct position
+            elif i in hidden_word:
+                result += "(WP)" # letter in the word
+            else:
+                result += "(NT)" # letter not in the word
+        print(result)
+        return False
+
+def main():
+    attempt = 5
+    guess = input(" Enter a four-letter word: ")
+    while (attempt > 0):
+        if check_word(guess):
+            break
+        
+        attempt -= 1
+        if (attempt > 0):
+
+            print(f"You have {attempt} attempts left.")
+            guess = input("Try again: ")
+            
+        if attempt == 0:
+            print("Game Over")
+
+main()
+import random
+
+words = ["this", "five", "help", "lake", "pink", "cats"]
+
+hidden_word = random.choice(words)
+
+
+
+def check_word(guess):
+    if hidden_word == guess:
+        print("yep")
+        return True
+    else:
+        result = ""
+        for i, j in zip(guess, hidden_word):
+            if i == j:
+                result += "(C)" # letter in the word and in correct position
+            elif i in hidden_word:
+                result += "(WP)" # letter in the word
+            else:
+                result += "(NT)" # letter not in the word
+        print(result)
+        return False
+
+def main():
+    attempt = 5
+    guess = input(" Enter a four-letter word: ")
+    while (attempt > 0):
+        if check_word(guess):
+            break
+        
+        attempt -= 1
+        if (attempt > 0):
+
+            print(f"You have {attempt} attempts left.")
+            guess = input("Try again: ")
+            
+        if attempt == 0:
+            print("Game Over")
+
+main()
