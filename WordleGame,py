@@ -8,7 +8,7 @@ hidden_word = random.choice(words)
 
 def check_word(guess):
     if hidden_word == guess:
-        print("yep")
+        print("yep hung")
         return True
     else:
         result = ""
